@@ -8,8 +8,9 @@
     'author': 'Rodrigo Fernandez',
     'website': 'http://solucionesprisma.com/',
     'depends' : [ 'stock_account' ],
-    'demo' : [ ],
-    'data' : [ 'stock_view.xml' ],
+    'data' : [
+        'views/stock_view.xml'
+    ],
     'installable': True,
     'certificate': '',
 }
