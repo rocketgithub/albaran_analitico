@@ -36,7 +36,7 @@ class StockInventory(models.Model):
     def _default_cuenta_analitica_id(self):
         user = self.env.user
 
-        if user['default_analytic_account_id']:
+        if 'default_analytic_account_id' in user.fields_get() user.default_analytic_account_id:
             return user['default_analytic_account_id'].id
         else:
             return False
