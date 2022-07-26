@@ -13,16 +13,5 @@
             </field>
         </record>
 
-        <record id="view_inventory_form_albaran_analitico" model="ir.ui.view">
-            <field name="name">stock.inventory.form.albaran_analitico</field>
-            <field name="model">stock.inventory</field>
-            <field name="inherit_id" ref="stock.view_inventory_form"/>
-            <field name="arch" type="xml">
-                <field name="company_id" position="before">
-                    <field name="cuenta_analitica_id"/>
-                </field>
-            </field>
-        </record>
-
     </data>
 </odoo>

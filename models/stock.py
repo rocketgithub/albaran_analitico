@@ -28,17 +28,3 @@ class StockPicking(models.Model):
     _inherit = 'stock.picking'
 
     cuenta_analitica_id = fields.Many2one('account.analytic.account', 'Cuenta analítica')
-
-class StockInventory(models.Model):
-    _inherit = 'stock.inventory'
-
-    @api.model
-    def _default_cuenta_analitica_id(self):
-        user = self.env.user
-
-        if 'default_analytic_account_id' in user.fields_get() and user.default_analytic_account_id:
-            return user['default_analytic_account_id'].id
-        else:
-            return False
-
-    cuenta_analitica_id = fields.Many2one('account.analytic.account', 'Cuenta analítica', default=_default_cuenta_analitica_id)
